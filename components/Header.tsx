@@ -5,11 +5,12 @@ import header from "@/assets/images/header.png";
 import header2 from "@/assets/images/header 2.png";
 import Image from "next/image";
 import { motion, useAnimate, useInView } from "framer-motion";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Typewriter from "typewriter-effect";
 
 function Header() {
 	const [scope, animate] = useAnimate();
+	const [init, setInit] = useState(false);
 	const isInView = useInView(scope);
 
 	useEffect(() => {
@@ -41,9 +42,11 @@ function Header() {
 						className="w-full h-fit max-w-lg py-8 px-5 rounded-xl bg-[black]/20 dark:bg-white/20 backdrop-blur-md"
 					>
 						<h1 className="text-[transparent] bg-gradient-to-br from-white to-secondary dark:to-primary bg-clip-text font-extrabold text-2xl xs:text-lg mb-4">
-							{isInView && (
+							{isInView && !init && (
 								<Typewriter
 									onInit={(typer) => {
+										setInit(true);
+
 										typer
 											.changeDelay(32)
 											.typeString(
@@ -59,6 +62,7 @@ function Header() {
 							<motion.p
 								initial={{ opacity: 0 }}
 								animate={{ opacity: 1 }}
+								viewport={{ once: true }}
 								transition={{ duration: 1, delay: 2 }}
 								className="text-xs xs:text-[0.65rem] text-white"
 							>
