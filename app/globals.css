@@ -2,32 +2,66 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@font-face {
+  font-family: Travels;
+  src: url(../assets/fonts/TT\ Travels\ Next\ Trial\ Thin.ttf);
+  font-weight: 100;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+@font-face {
+  font-family: Travels;
+  src: url(../assets/fonts/TT\ Travels\ Next\ Trial\ ExtraLight.ttf);
+  font-weight: 200;
 }
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@font-face {
+  font-family: Travels;
+  src: url(../assets/fonts/TT\ Travels\ Next\ Trial\ Light.ttf);
+  font-weight: 300;
+}
+@font-face {
+  font-family: Travels;
+  src: url(../assets/fonts/TT\ Travels\ Next\ Trial\ Regular.ttf);
+  font-weight: 400;
+}
+@font-face {
+  font-family: Travels;
+  src: url(../assets/fonts/TT\ Travels\ Next\ Trial\ Medium.ttf);
+  font-weight: 500;
+}
+@font-face {
+  font-family: Travels;
+  src: url(../assets/fonts/TT\ Travels\ Next\ Trial\ DemiBold.ttf);
+  font-weight: 600;
+}
+@font-face {
+  font-family: Travels;
+  src: url(../assets/fonts/TT\ Travels\ Next\ Trial\ Bold.ttf);
+  font-weight: 700;
+}
+@font-face {
+  font-family: Travels;
+  src: url(../assets/fonts/TT\ Travels\ Next\ Trial\ ExtraBold.ttf);
+  font-weight: 800;
+}
+@font-face {
+  font-family: Travels;
+  src: url(../assets/fonts/TT\ Travels\ Next\ Trial\ Black.ttf);
+  font-weight: 900;
+}
+@font-face {
+  font-family: Outline;
+  src: url(../assets/fonts/TT\ Travels\ Next\ Trial\ Black\ Outline.ttf);
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .mx-width {
+    width: 94%;
+    margin: 0 auto;
   }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Travels;
 }
