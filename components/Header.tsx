@@ -23,7 +23,7 @@ function Header() {
 			animate(
 				scope.current,
 				{ x: 0, opacity: 1 },
-				{ duration: 2, type: "spring", stiffness: 100 }
+				{ duration: 4, type: "spring", stiffness: 100 }
 			);
 		}
 	}, [animate, isInView, scope]);
@@ -35,7 +35,7 @@ function Header() {
 			animate1(
 				scope1.current,
 				{ x: 0, opacity: 1 },
-				{ duration: 2, type: "spring", stiffness: 100 }
+				{ duration: 4, type: "spring", stiffness: 100 }
 			);
 		}
 	}, [animate1, isInView1, scope1]);
@@ -78,7 +78,7 @@ function Header() {
 								initial={{ opacity: 0 }}
 								animate={{ opacity: 1 }}
 								viewport={{ once: true }}
-								transition={{ duration: 1.5, delay: 2 }}
+								transition={{ duration: 2, delay: 4 }}
 								className="text-xs xs:text-[0.65rem] text-white"
 							>
 								At AMAKRE, we are dedicated to empowering our clients to achieve
@@ -92,7 +92,7 @@ function Header() {
 					<motion.div
 						whileInView={{ opacity: 1 }}
 						initial={{ opacity: 0 }}
-						transition={{ duration: 1.5 }}
+						transition={{ duration: 2 }}
 						viewport={{ once: true }}
 						className="relative"
 					>
@@ -104,7 +104,7 @@ function Header() {
 					<motion.div
 						initial={{ opacity: 0 }}
 						whileInView={{ opacity: 1 }}
-						transition={{ duration: 1.5 }}
+						transition={{ duration: 2 }}
 						viewport={{ once: true }}
 						className="relative"
 					>
@@ -141,7 +141,7 @@ function Header() {
 								initial={{ opacity: 0 }}
 								animate={{ opacity: 1 }}
 								viewport={{ once: true }}
-								transition={{ duration: 1.5, delay: 2 }}
+								transition={{ duration: 2, delay: 4 }}
 								className="text-xs xs:text-[0.65rem] text-white"
 							>
 								AMAKRE is a dynamic blockchain, finance, and technology company

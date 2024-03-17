@@ -11,7 +11,7 @@ function Card({ title, text }: { title: string; text: string }) {
 			scale: 1,
 			transition: {
 				type: "spring",
-				stiffness: 100,
+				stiffness: 50,
 				duration: 1.5,
 			},
 		},
