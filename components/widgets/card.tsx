@@ -1,6 +1,14 @@
+import { motion } from "framer-motion";
+
 function Card({ title, text }: { title: string; text: string }) {
 	return (
-		<div className="w-full h-fit max-w-md min-w-[270px] rounded-lg border border-primary bg-primary/10 backdrop-blur-md">
+		<motion.div
+			initial={{ scale: 0 }}
+			animate={{ scale: 1 }}
+			viewport={{ once: true }}
+			transition={{ duration: 1, type: "spring", stiffness: 100 }}
+			className="w-full h-fit max-w-md min-w-[270px] rounded-lg border border-primary bg-primary/10 backdrop-blur-md"
+		>
 			<div className="flex items-center py-3">
 				<div className="px-4">
 					<div className="p-1 rounded-[50%] bg-primary/20 dark:bg-primary/40">
@@ -24,7 +32,7 @@ function Card({ title, text }: { title: string; text: string }) {
 					{text}
 				</p>
 			</div>
-		</div>
+		</motion.div>
 	);
 }
 

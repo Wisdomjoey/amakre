@@ -12,6 +12,9 @@ function Header() {
 	const [scope, animate] = useAnimate();
 	const [init, setInit] = useState(false);
 	const isInView = useInView(scope);
+	const [init1, setInit1] = useState(false);
+	const [scope1, animate1] = useAnimate();
+	const isInView1 = useInView(scope1);
 
 	useEffect(() => {
 		if (isInView) {
@@ -24,6 +27,18 @@ function Header() {
 			);
 		}
 	}, [animate, isInView, scope]);
+
+	useEffect(() => {
+		if (isInView1) {
+			setInit1(true);
+
+			animate1(
+				scope1.current,
+				{ x: 0, opacity: 1 },
+				{ duration: 1, type: "spring", stiffness: 100 }
+			);
+		}
+	}, [animate1, isInView1, scope1]);
 
 	return (
 		<div className="relative flex justify-center bg-secondary">
@@ -48,7 +63,7 @@ function Header() {
 								<Typewriter
 									onInit={(typer) => {
 										typer
-											.changeDelay(32)
+											.changeDelay(16)
 											.typeString(
 												"An Investment Firm Dynamic in Blockchain, Finance & Technology"
 											)
@@ -63,7 +78,7 @@ function Header() {
 								initial={{ opacity: 0 }}
 								animate={{ opacity: 1 }}
 								viewport={{ once: true }}
-								transition={{ duration: 1, delay: 2 }}
+								transition={{ duration: 1, delay: 1 }}
 								className="text-xs xs:text-[0.65rem] text-white"
 							>
 								At AMAKRE, we are dedicated to empowering our clients to achieve
@@ -96,27 +111,50 @@ function Header() {
 						<Image alt="investment image" src={header2} />
 					</motion.div>
 
-					<div className="self-end w-full h-fit max-w-lg py-8 px-5 rounded-xl bg-primary/70 dark:bg-white/20 backdrop-blur-md">
+					<motion.div
+						ref={scope1}
+						viewport={{ once: true }}
+						initial={{ x: "-100%", opacity: 0 }}
+						className="self-end w-full h-fit max-w-lg py-8 px-5 rounded-xl bg-primary/70 dark:bg-white/20 backdrop-blur-md transition-all duration-200"
+					>
 						<span className="uppercase text-xs xs:text-[0.65rem] text-white border-b border-white pb-1">
 							introduction
 						</span>
 
 						<h2 className="text-[transparent] bg-gradient-to-br from-white to-secondary dark:to-primary bg-clip-text font-extrabold text-2xl xs:text-lg my-4">
-							Blockchain, Finance & Technology
+							{init1 && (
+								<Typewriter
+									onInit={(typer) => {
+										typer
+											.changeDelay(31)
+											.typeString("Blockchain, Finance & Technology")
+											.start();
+									}}
+								/>
+							)}
 						</h2>
 
 						<hr className="border-[lightgray] dark:border-[gray] mb-4" />
 
-						<p className="text-xs xs:text-[0.65rem] text-white">
-							AMAKRE is a dynamic blockchain, finance, and technology company
-							dedicated to pioneering innovation in the digital and traditional
-							finance sectors. As a prominent venture capitalist firm, AMAKRE
-							identifies and invests in cutting-edge projects while also
-							offering comprehensive education through its finance academy. With
-							a diverse portfolio of products and a vision for growth, AMAKRE is
-							poised to lead the way in shaping the future of finance.
-						</p>
-					</div>
+						{init1 && (
+							<motion.p
+								initial={{ opacity: 0 }}
+								animate={{ opacity: 1 }}
+								viewport={{ once: true }}
+								transition={{ duration: 1, delay: 1 }}
+								className="text-xs xs:text-[0.65rem] text-white"
+							>
+								AMAKRE is a dynamic blockchain, finance, and technology company
+								dedicated to pioneering innovation in the digital and
+								traditional finance sectors. As a prominent venture capitalist
+								firm, AMAKRE identifies and invests in cutting-edge projects
+								while also offering comprehensive education through its finance
+								academy. With a diverse portfolio of products and a vision for
+								growth, AMAKRE is poised to lead the way in shaping the future
+								of finance.
+							</motion.p>
+						)}
+					</motion.div>
 				</div>
 			</div>
 		</div>
