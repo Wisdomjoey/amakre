@@ -5,16 +5,32 @@ import Pager from "./widgets/pager";
 import { motion } from "framer-motion";
 
 function About() {
+	const vart = {
+		hide: {
+			scale: 1,
+		},
+		show: {
+			scale: 1,
+			transition: {
+				type: "spring",
+				staggerChildren: 0.5,
+			},
+		},
+	};
+
 	return (
 		<div className="pt-32 sm:pt-16">
 			<div className="mx-width">
 				<Pager title="About Amakre" />
 
-				<div className="py-10">
-					<motion.div
-						transition={{ staggerChildren: 0.5 }}
-						className="py-5 flex gap-10 flex-wrap justify-evenly"
-					>
+				<motion.div
+					initial="hide"
+					animate="show"
+					viewport={{ once: true }}
+					variants={vart}
+					className="py-10"
+				>
+					<div className="py-5 flex gap-10 flex-wrap justify-evenly">
 						<Card
 							title="Establishment"
 							text="AMAKRE Firm was founded on March 27th, 2020, with a vision to
@@ -30,12 +46,9 @@ function About() {
 						leadership have propelled AMAKRE Firm to new heights in the
 						competitive market."
 						/>
-					</motion.div>
+					</div>
 
-					<motion.div
-						transition={{ staggerChildren: 0.5 }}
-						className="py-5 flex gap-10 flex-wrap justify-between"
-					>
+					<div className="py-5 flex gap-10 flex-wrap justify-between">
 						<Card
 							title="Headquarters"
 							text="AMAKRE Firm is headquartered in Osogbo, the capital city of Osun
@@ -51,12 +64,9 @@ function About() {
 						reflects the firm's commitment to excellence, integrity, and global
 						recognition."
 						/>
-					</motion.div>
+					</div>
 
-					<motion.div
-						transition={{ staggerChildren: 0.5 }}
-						className="py-5 flex gap-10 flex-wrap justify-around"
-					>
+					<div className="py-5 flex gap-10 flex-wrap justify-around">
 						<Card
 							title="Mission and Vision"
 							text="AMAKRE aims to achieve global prominence before its third decade of
@@ -73,8 +83,8 @@ function About() {
 						with the necessary documentation to combat money laundering, fraud,
 						and other illicit activities."
 						/>
-					</motion.div>
-				</div>
+					</div>
+				</motion.div>
 			</div>
 		</div>
 	);

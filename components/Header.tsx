@@ -23,7 +23,7 @@ function Header() {
 			animate(
 				scope.current,
 				{ x: 0, opacity: 1 },
-				{ duration: 1, type: "spring", stiffness: 100 }
+				{ duration: 2, type: "spring", stiffness: 100 }
 			);
 		}
 	}, [animate, isInView, scope]);
@@ -35,7 +35,7 @@ function Header() {
 			animate1(
 				scope1.current,
 				{ x: 0, opacity: 1 },
-				{ duration: 1, type: "spring", stiffness: 100 }
+				{ duration: 2, type: "spring", stiffness: 100 }
 			);
 		}
 	}, [animate1, isInView1, scope1]);
@@ -55,7 +55,7 @@ function Header() {
 					<motion.div
 						ref={scope}
 						viewport={{ once: true }}
-						initial={{ x: "-100%", opacity: 0 }}
+						initial={{ x: "-100%", opacity: 0.4 }}
 						className="w-full h-fit max-w-lg py-8 px-5 rounded-xl bg-[black]/20 dark:bg-white/20 backdrop-blur-md transition-all duration-200"
 					>
 						<h1 className="text-[transparent] bg-gradient-to-br from-white to-secondary dark:to-primary bg-clip-text font-extrabold text-2xl xs:text-lg mb-4">
@@ -78,7 +78,7 @@ function Header() {
 								initial={{ opacity: 0 }}
 								animate={{ opacity: 1 }}
 								viewport={{ once: true }}
-								transition={{ duration: 1, delay: 1 }}
+								transition={{ duration: 1.5, delay: 2 }}
 								className="text-xs xs:text-[0.65rem] text-white"
 							>
 								At AMAKRE, we are dedicated to empowering our clients to achieve
@@ -92,7 +92,7 @@ function Header() {
 					<motion.div
 						whileInView={{ opacity: 1 }}
 						initial={{ opacity: 0 }}
-						transition={{ duration: 1 }}
+						transition={{ duration: 1.5 }}
 						viewport={{ once: true }}
 						className="relative"
 					>
@@ -104,7 +104,7 @@ function Header() {
 					<motion.div
 						whileInView={{ opacity: 1 }}
 						initial={{ opacity: 0 }}
-						transition={{ duration: 1 }}
+						transition={{ duration: 1.5 }}
 						viewport={{ once: true }}
 						className="relative"
 					>
@@ -114,7 +114,7 @@ function Header() {
 					<motion.div
 						ref={scope1}
 						viewport={{ once: true }}
-						initial={{ x: "-100%", opacity: 0 }}
+						initial={{ x: "-100%", opacity: 0.4 }}
 						className="self-end w-full h-fit max-w-lg py-8 px-5 rounded-xl bg-primary/70 dark:bg-white/20 backdrop-blur-md transition-all duration-200"
 					>
 						<span className="uppercase text-xs xs:text-[0.65rem] text-white border-b border-white pb-1">
@@ -141,7 +141,7 @@ function Header() {
 								initial={{ opacity: 0 }}
 								animate={{ opacity: 1 }}
 								viewport={{ once: true }}
-								transition={{ duration: 1, delay: 1 }}
+								transition={{ duration: 1.5, delay: 2 }}
 								className="text-xs xs:text-[0.65rem] text-white"
 							>
 								AMAKRE is a dynamic blockchain, finance, and technology company

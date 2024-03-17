@@ -3,12 +3,23 @@
 import { motion } from "framer-motion";
 
 function Card({ title, text }: { title: string; text: string }) {
+	const vart = {
+		hide: {
+			scale: 0,
+		},
+		show: {
+			scale: 1,
+			transition: {
+				type: "spring",
+				stiffness: 100,
+				duration: 2,
+			},
+		},
+	};
+
 	return (
 		<motion.div
-			initial={{ scale: 0 }}
-			animate={{ scale: 1 }}
-			viewport={{ once: true }}
-			transition={{ duration: 1, type: "spring", stiffness: 100 }}
+			variants={vart}
 			className="w-full h-fit max-w-md min-w-[270px] rounded-lg border border-primary bg-primary/10 backdrop-blur-md"
 		>
 			<div className="flex items-center py-3">

@@ -8,7 +8,7 @@ function Pager({ title, text }: { title: string; text?: string }) {
 			initial={{ opacity: 0 }}
 			animate={{ opacity: 1 }}
 			viewport={{ once: true }}
-			transition={{ duration: 1 }}
+			transition={{ duration: 1.5 }}
 			className="min-h-20 h-fit rounded-se-lg overflow-hidden bg-card dark:bg-card__dark"
 		>
 			<div className="flex h-10">
