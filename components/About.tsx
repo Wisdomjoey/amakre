@@ -1,3 +1,5 @@
+"use client";
+
 import Card from "./widgets/card";
 import Pager from "./widgets/pager";
 import { motion } from "framer-motion";

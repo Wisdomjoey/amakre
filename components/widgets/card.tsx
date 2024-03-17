@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 
 function Card({ title, text }: { title: string; text: string }) {
