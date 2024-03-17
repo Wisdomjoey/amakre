@@ -12,7 +12,7 @@ function Card({ title, text }: { title: string; text: string }) {
 			transition: {
 				type: "spring",
 				stiffness: 100,
-				duration: 2,
+				duration: 1.5,
 			},
 		},
 	};

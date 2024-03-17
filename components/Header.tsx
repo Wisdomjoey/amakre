@@ -102,8 +102,8 @@ function Header() {
 
 				<div className="pt-32 flex justify-around sm:flex-col sm:gap-10">
 					<motion.div
-						whileInView={{ opacity: 1 }}
 						initial={{ opacity: 0 }}
+						whileInView={{ opacity: 1 }}
 						transition={{ duration: 1.5 }}
 						viewport={{ once: true }}
 						className="relative"

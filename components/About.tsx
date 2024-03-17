@@ -25,7 +25,7 @@ function About() {
 
 				<motion.div
 					initial="hide"
-					animate="show"
+					whileInView="show"
 					viewport={{ once: true }}
 					variants={vart}
 					className="py-10"
