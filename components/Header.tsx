@@ -15,6 +15,8 @@ function Header() {
 
 	useEffect(() => {
 		if (isInView) {
+			setInit(true);
+
 			animate(
 				scope.current,
 				{ x: 0, opacity: 1 },
@@ -39,14 +41,12 @@ function Header() {
 						ref={scope}
 						viewport={{ once: true }}
 						initial={{ x: "-100%", opacity: 0 }}
-						className="w-full h-fit max-w-lg py-8 px-5 rounded-xl bg-[black]/20 dark:bg-white/20 backdrop-blur-md"
+						className="w-full h-fit max-w-lg py-8 px-5 rounded-xl bg-[black]/20 dark:bg-white/20 backdrop-blur-md transition-all duration-200"
 					>
 						<h1 className="text-[transparent] bg-gradient-to-br from-white to-secondary dark:to-primary bg-clip-text font-extrabold text-2xl xs:text-lg mb-4">
-							{isInView && !init && (
+							{init && (
 								<Typewriter
 									onInit={(typer) => {
-										setInit(true);
-
 										typer
 											.changeDelay(32)
 											.typeString(
@@ -58,7 +58,7 @@ function Header() {
 							)}
 						</h1>
 
-						{isInView && (
+						{init && (
 							<motion.p
 								initial={{ opacity: 0 }}
 								animate={{ opacity: 1 }}
