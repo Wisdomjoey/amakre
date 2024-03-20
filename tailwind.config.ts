@@ -11,7 +11,8 @@ const config: Config = {
 		extend: {
 			backgroundImage: {
 				card: "linear-gradient(180deg, #0447cc, transparent)",
-				card__dark: "linear-gradient(180deg, rgba(255,255,255,0.7), transparent)",
+				card__dark:
+					"linear-gradient(180deg, rgba(255,255,255,0.7), transparent)",
 			},
 		},
 		colors: {
@@ -31,6 +32,4 @@ const config: Config = {
 	plugins: [],
 };
 export default config;
-
-
 

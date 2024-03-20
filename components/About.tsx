@@ -30,8 +30,9 @@ function About() {
 					variants={vart}
 					className="py-10"
 				>
-					<div className="py-5 flex gap-10 flex-wrap justify-evenly">
+					<div className="py-5 flex sm:flex-col gap-10 flex-wrap justify-evenly">
 						<Card
+							className="sm:self-center"
 							title="Establishment"
 							text="AMAKRE Firm was founded on March 27th, 2020, with a vision to
 					revolutionize the investment landscape. Under the leadership of CEO
@@ -40,6 +41,7 @@ function About() {
 						/>
 
 						<Card
+							className="sm:self-end"
 							title="Expertise"
 							text="CEO Isaac Caleb is renowned for his expertise in business management
 						across traditional and digital systems. His strategic vision and
@@ -48,7 +50,7 @@ function About() {
 						/>
 					</div>
 
-					<div className="py-5 flex gap-10 flex-wrap justify-between">
+					<div className="py-5 flex sm:flex-col gap-10 flex-wrap justify-between">
 						<Card
 							title="Headquarters"
 							text="AMAKRE Firm is headquartered in Osogbo, the capital city of Osun
@@ -58,6 +60,7 @@ function About() {
 						/>
 
 						<Card
+							className="sm:self-end"
 							title="Meaning of 'AMAKRE'"
 							text="The word 'AMAKRE' holds significant meaning, signifying a royalty
 						trade dealer with a distinguished reputation across the universe. It
@@ -66,7 +69,7 @@ function About() {
 						/>
 					</div>
 
-					<div className="py-5 flex gap-10 flex-wrap justify-around">
+					<div className="py-5 flex sm:flex-col gap-10 flex-wrap justify-around">
 						<Card
 							title="Mission and Vision"
 							text="AMAKRE aims to achieve global prominence before its third decade of
@@ -76,6 +79,7 @@ function About() {
 						/>
 
 						<Card
+							className="sm:self-center"
 							title="Regulatory Compliance"
 							text="AMAKRE Firm is duly registered under the Corporate Affairs
 						Commission (CAC) of Nigeria, ensuring compliance with all regulatory

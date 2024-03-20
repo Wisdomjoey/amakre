@@ -20,7 +20,7 @@ function Pager({ title, text }: { title: string; text?: string }) {
 			</div>
 
 			{text && (
-				<div className="text-xs px-6 py-3 text-secondary">
+				<div className="text-xs xs:text-[0.65rem] px-6 py-3 text-secondary dark:text-white">
 					<p>{text}</p>
 				</div>
 			)}

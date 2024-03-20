@@ -2,7 +2,15 @@
 
 import { motion } from "framer-motion";
 
-function Card({ title, text }: { title: string; text: string }) {
+function Card({
+	title,
+	text,
+	className,
+}: {
+	title: string;
+	text: string;
+	className?: string;
+}) {
 	const vart = {
 		hide: {
 			scale: 0,
@@ -11,7 +19,7 @@ function Card({ title, text }: { title: string; text: string }) {
 			scale: 1,
 			transition: {
 				type: "spring",
-				stiffness: 50,
+				stiffness: 100,
 				duration: 1.5,
 			},
 		},
@@ -20,7 +28,7 @@ function Card({ title, text }: { title: string; text: string }) {
 	return (
 		<motion.div
 			variants={vart}
-			className="w-full h-fit max-w-md min-w-[270px] rounded-lg border border-primary bg-primary/10 backdrop-blur-md"
+			className={`w-full h-fit max-w-md min-w-[270px] rounded-lg ${className} border border-primary bg-primary/10 backdrop-blur-md`}
 		>
 			<div className="flex items-center py-3">
 				<div className="px-4">
@@ -30,7 +38,7 @@ function Card({ title, text }: { title: string; text: string }) {
 				</div>
 
 				<div className="px-2">
-					<h4 className="text-secondary dark:text-white text-sm font-semibold">
+					<h4 className="text-secondary dark:text-white text-sm xs:text-xs font-semibold">
 						{title}
 					</h4>
 				</div>
