@@ -21,15 +21,15 @@ function Navbar() {
 
 					<ul className="flex-1 flex items-center justify-center gap-5 text-xs text-white sm:hidden">
 						<li>
-							<Link href="#">About</Link>
+							<Link href="#about">About</Link>
 						</li>
 
 						<li>
-							<Link href="#">Products</Link>
+							<Link href="#products">Products</Link>
 						</li>
 
 						<li>
-							<Link href="#">Services</Link>
+							<Link href="#services">Services</Link>
 						</li>
 					</ul>
 

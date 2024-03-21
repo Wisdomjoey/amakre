@@ -2,6 +2,7 @@ import About from "@/components/About";
 import Cores from "@/components/Cores";
 import Header from "@/components/Header";
 import Products from "@/components/Products";
+import Services from "@/components/Services";
 
 export default function Home() {
 	return (
@@ -20,6 +21,10 @@ export default function Home() {
 
 			<section id="cores">
 				<Cores />
+			</section>
+
+			<section id="services">
+				<Services />
 			</section>
 		</main>
 	);

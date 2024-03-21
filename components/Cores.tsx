@@ -36,7 +36,7 @@ function Cores() {
 
 								<div className="rounded-lg p-[1px] bg-gradient-to-r from-primary/50">
 									<div className="rounded-lg bg-white dark:bg-secondary">
-										<div className="p-5 max-w-lg relative rounded-lg backdrop-blur-md bg-gradient-to-r from-primary/10 text-secondary dark:text-white">
+										<div className="p-5 xs:px-3 max-w-lg relative rounded-lg backdrop-blur-md bg-gradient-to-r from-primary/10 text-secondary dark:text-white">
 											<h3 className="mb-2 font-semibold text-sm xs:text-xs">
 												Venture Capital
 											</h3>
@@ -63,7 +63,7 @@ function Cores() {
 
 								<div className="rounded-lg p-[1px] bg-gradient-to-r from-primary/50">
 									<div className="rounded-lg bg-white dark:bg-secondary">
-										<div className="p-5 max-w-lg relative rounded-lg backdrop-blur-md bg-gradient-to-r from-primary/10 text-secondary dark:text-white">
+										<div className="p-5 xs:px-3 max-w-lg relative rounded-lg backdrop-blur-md bg-gradient-to-r from-primary/10 text-secondary dark:text-white">
 											<h3 className="mb-2 font-semibold text-sm xs:text-xs">
 												Education Academy
 											</h3>
@@ -90,7 +90,7 @@ function Cores() {
 
 								<div className="rounded-lg p-[1px] bg-gradient-to-r from-primary/50">
 									<div className="rounded-lg bg-white dark:bg-secondary">
-										<div className="p-5 max-w-lg relative rounded-lg backdrop-blur-md bg-gradient-to-r from-primary/10 text-secondary dark:text-white">
+										<div className="p-5 xs:px-3 max-w-lg relative rounded-lg backdrop-blur-md bg-gradient-to-r from-primary/10 text-secondary dark:text-white">
 											<h3 className="mb-2 font-semibold text-sm xs:text-xs">
 												Hedge Fund Management
 											</h3>
