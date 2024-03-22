@@ -3,11 +3,12 @@ import Cores from "@/components/Cores";
 import Header from "@/components/Header";
 import Products from "@/components/Products";
 import Services from "@/components/Services";
+import Footer from "@/components/layouts/Footer";
 
 export default function Home() {
 	return (
 		<main className="">
-			<section>
+			<section id="header">
 				<Header />
 			</section>
 
@@ -25,6 +26,10 @@ export default function Home() {
 
 			<section id="services">
 				<Services />
+			</section>
+
+			<section id="footer">
+				<Footer />
 			</section>
 		</main>
 	);

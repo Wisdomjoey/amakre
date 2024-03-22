@@ -94,7 +94,7 @@ function Header() {
 						initial={{ opacity: 0 }}
 						transition={{ duration: 2 }}
 						viewport={{ once: true }}
-						className="relative"
+						className="relative max-w-xl"
 					>
 						<Image alt="investment image" src={header} />
 					</motion.div>
@@ -106,7 +106,7 @@ function Header() {
 						whileInView={{ opacity: 1 }}
 						transition={{ duration: 2 }}
 						viewport={{ once: true }}
-						className="relative"
+						className="relative max-w-xl"
 					>
 						<Image alt="investment image" src={header2} />
 					</motion.div>

@@ -1,6 +1,16 @@
 import Image from "next/image";
 import Pager from "./widgets/pager";
 import service from "@/assets/images/header 2.png";
+import html from "@/assets/images/html.png";
+import css from "@/assets/images/css.png";
+import js from "@/assets/images/javascript.png";
+import node from "@/assets/images/nodejs.png";
+import python from "@/assets/images/python.png";
+import php from "@/assets/images/php.png";
+import ruby from "@/assets/images/ruby.png";
+import java from "@/assets/images/java.png";
+import swift from "@/assets/images/swift.png";
+import kotlin from "@/assets/images/kotlin.png";
 
 function Services() {
 	const services = [
@@ -13,14 +23,18 @@ function Services() {
 			title: "Website Creation",
 			description:
 				"Our expert team specializes in website creation using a wide range of programming languages, including but not limited to:",
-			// sub: [
-			// 	"HTML/CSS",
-			// 	"JavaScript (Node.js, React)",
-			// 	"Python (Django, Flask)",
-			// 	"PHP (Laravel)",
-			// 	"Ruby on Rails",
-			//   ''
-			// ],
+			sub: [
+				{ icon: html, title: "html" },
+				{ icon: css, title: "css" },
+				{ icon: js, title: "javascript" },
+				{ icon: node, title: "nodejs" },
+				{ icon: python, title: "python" },
+				{ icon: php, title: "php" },
+				{ icon: ruby, title: "ruby" },
+				{ icon: java, title: "java" },
+				{ icon: swift, title: "swift" },
+				{ icon: kotlin, title: "kotlin" },
+			],
 		},
 		{
 			title: "App Creation & UI/UX Design",
@@ -86,6 +100,20 @@ function Services() {
 								<p className="text-xs xs:text-[0.65rem] text-secondary dark:text-[lightgray]">
 									{service.description}
 								</p>
+
+								{service.sub && (
+									<div className="pt-6 flex items-center gap-2 flex-wrap">
+										{service.sub.map((sub, ind1) => (
+											<div key={ind1} className="w-10" title={sub.title}>
+												<Image
+													alt={sub.title}
+													src={sub.icon}
+													className="w-full object-contain"
+												/>
+											</div>
+										))}
+									</div>
+								)}
 							</div>
 						))}
 					</div>
