@@ -30,7 +30,7 @@ function Header() {
 			setInit1(true);
 
 			scope1.current.classList.replace("-translate-x-[100%]", "translate-x-0");
-			scope1.current.classList.replace("opacity-100", "opacity-0");
+			scope1.current.classList.replace("opacity-0", "opacity-100");
 		}
 	}, [animate1, isInView1, scope1]);
 
