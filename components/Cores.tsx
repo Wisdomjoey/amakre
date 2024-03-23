@@ -1,8 +1,39 @@
+"use client";
+
 import Image from "next/image";
 import Pager from "./widgets/pager";
 import logo from "@/assets/images/amakre1.jpg";
+import { motion } from "framer-motion";
 
 function Cores() {
+	const vart = {
+		hide: {
+			opacity: 1,
+		},
+		show: {
+			opacity: 1,
+			transition: {
+				type: "spring",
+				staggerChildren: 0.5,
+			},
+		},
+	};
+	const vart1 = {
+		hide: {
+			x: 250,
+			opacity: 0,
+		},
+		show: {
+			x: 0,
+			opacity: 1,
+			transition: {
+				type: "spring",
+				stiffness: 50,
+				duration: 1.5,
+			},
+		},
+	};
+
 	return (
 		<div className="pt-32 sm:pt-16">
 			<div className="mx-width">
@@ -26,8 +57,17 @@ function Cores() {
 							</div>
 						</div>
 
-						<div className="py-10 border-l-2 border-primary flex flex-col gap-40">
-							<div className="relative pl-20 xs:pl-10 flex items-center">
+						<motion.div
+							initial="hide"
+							whileInView="show"
+							viewport={{ once: true }}
+							variants={vart}
+							className="py-10 border-l-2 border-primary flex flex-col gap-40"
+						>
+							<motion.div
+								variants={vart1}
+								className="relative pl-20 xs:pl-10 flex items-center"
+							>
 								<div className="absolute -left-5 p-1 rounded-[50%] bg-white dark:bg-secondary">
 									<div className="p-2 rounded-[50%] bg-primary/30">
 										<div className="w-4 h-4 rounded-[50%] bg-primary"></div>
@@ -52,9 +92,12 @@ function Cores() {
 										</div>
 									</div>
 								</div>
-							</div>
+							</motion.div>
 
-							<div className="relative pl-20 xs:pl-10 flex items-center">
+							<motion.div
+								variants={vart1}
+								className="relative pl-20 xs:pl-10 flex items-center"
+							>
 								<div className="absolute -left-5 p-1 rounded-[50%] bg-white dark:bg-secondary">
 									<div className="p-2 rounded-[50%] bg-primary/30">
 										<div className="w-4 h-4 rounded-[50%] bg-primary"></div>
@@ -69,19 +112,22 @@ function Cores() {
 											</h3>
 
 											<p className="text-xs xs:text-[0.65rem] dark:text-[lightgray]">
-												Recognizing the importance of financial literacy,
-												AMAKRE operates an academy specializing in finance
-												education. The academy covers a broad spectrum,
-												including cryptocurrency and forex trading, empowering
-												individuals with the knowledge and skills needed to
-												navigate the complexities of the financial markets.
+												Recognizing the importance of financial literacy, AMAKRE
+												operates an academy specializing in finance education.
+												The academy covers a broad spectrum, including
+												cryptocurrency and forex trading, empowering individuals
+												with the knowledge and skills needed to navigate the
+												complexities of the financial markets.
 											</p>
 										</div>
 									</div>
 								</div>
-							</div>
+							</motion.div>
 
-							<div className="relative pl-20 xs:pl-10 flex items-center">
+							<motion.div
+								variants={vart1}
+								className="relative pl-20 xs:pl-10 flex items-center"
+							>
 								<div className="absolute -left-5 p-1 rounded-[50%] bg-white dark:bg-secondary">
 									<div className="p-2 rounded-[50%] bg-primary/30">
 										<div className="w-4 h-4 rounded-[50%] bg-primary"></div>
@@ -106,8 +152,8 @@ function Cores() {
 										</div>
 									</div>
 								</div>
-							</div>
-						</div>
+							</motion.div>
+						</motion.div>
 					</div>
 				</div>
 			</div>

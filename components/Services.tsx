@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Pager from "./widgets/pager";
 import { motion } from "framer-motion";
@@ -87,11 +89,11 @@ function Services() {
 	};
 	const vart1 = {
 		hide: {
-			x: 250,
+			y: 250,
 			opacity: 0,
 		},
 		show: {
-			x: 0,
+			y: 0,
 			opacity: 1,
 			transition: {
 				type: "spring",
