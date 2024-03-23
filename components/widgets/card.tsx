@@ -19,8 +19,8 @@ function Card({
 			scale: 1,
 			transition: {
 				type: "spring",
-				stiffness: 100,
-				duration: 1.5,
+				stiffness: 50,
+				duration: 2,
 			},
 		},
 	};

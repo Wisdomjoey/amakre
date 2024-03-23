@@ -1,4 +1,7 @@
+"use client";
+
 import Pager from "./widgets/pager";
+import { motion } from "framer-motion";
 
 function Products() {
 	const products = [
@@ -53,6 +56,33 @@ function Products() {
 			],
 		},
 	];
+	const vart = {
+		hide: {
+			opacity: 1,
+		},
+		show: {
+			opacity: 1,
+			transition: {
+				type: "spring",
+				staggerChildren: 0.5,
+			},
+		},
+	};
+	const vart1 = {
+		hide: {
+			y: 250,
+			opacity: 0,
+		},
+		show: {
+			y: 0,
+			opacity: 1,
+			transition: {
+				type: "spring",
+				stiffness: 50,
+				duration: 1.5,
+			},
+		},
+	};
 
 	return (
 		<div className="pt-32 sm:pt-16">
@@ -63,10 +93,17 @@ function Products() {
 				/>
 
 				<div className="py-10">
-					<div className="flex flex-wrap items-stretch justify-center gap-8">
+					<motion.div
+						initial="hide"
+						whileInView="show"
+						viewport={{ once: true }}
+						variants={vart}
+						className="flex flex-wrap items-stretch justify-center gap-8"
+					>
 						{products.map((product, ind) => (
-							<div
+							<motion.div
 								key={ind}
+								variants={vart1}
 								className="flex-1 flex flex-col justify-between max-w-sm min-w-[300px] xs:min-w-[270px] rounded-lg hover:shadow-[4px_4px_7px_rgba(0,0,0,0.3)] dark:hover:shadow-[4px_4px_7px_rgba(0,0,0,1)] transition-shadow duration-300 group p-4 bg-primary dark:bg-primary/30 backdrop-blur-md even:bg-white dark:even:bg-secondary even:border border-primary"
 							>
 								<div className="w-full">
@@ -79,7 +116,9 @@ function Products() {
 											{product.name}
 										</h4>
 
-										<h5 className="font-medium text-sm xs:text-xs mb-1">Description</h5>
+										<h5 className="font-medium text-sm xs:text-xs mb-1">
+											Description
+										</h5>
 
 										<p className="text-[lightgray] group-even:text-secondary dark:group-even:text-[lightgray] text-xs xs:text-[0.65rem]">
 											{product.description}
@@ -100,9 +139,9 @@ function Products() {
 								<button className="mt-6 bg-white dark:bg-primary group-even:bg-primary rounded-lg w-full py-3 text-sm font-semibold text-primary dark:text-white group-even:text-white">
 									Coming Soon
 								</button>
-							</div>
+							</motion.div>
 						))}
-					</div>
+					</motion.div>
 				</div>
 			</div>
 		</div>

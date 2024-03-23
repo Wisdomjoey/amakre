@@ -20,11 +20,8 @@ function Header() {
 		if (isInView) {
 			setInit(true);
 
-			animate(
-				scope.current,
-				{ x: 0, opacity: 1 },
-				{ duration: 4, type: "spring", stiffness: 100 }
-			);
+			scope.current.classList.replace("-translate-x-[100%]", "translate-x-0");
+			scope.current.classList.replace("opacity-0", "opacity-100");
 		}
 	}, [animate, isInView, scope]);
 
@@ -32,11 +29,8 @@ function Header() {
 		if (isInView1) {
 			setInit1(true);
 
-			animate1(
-				scope1.current,
-				{ x: 0, opacity: 1 },
-				{ duration: 4, type: "spring", stiffness: 100 }
-			);
+			scope1.current.classList.replace("-translate-x-[100%]", "translate-x-0");
+			scope1.current.classList.replace("opacity-100", "opacity-0");
 		}
 	}, [animate1, isInView1, scope1]);
 
@@ -52,11 +46,9 @@ function Header() {
 
 			<div className="mx-width pt-32 sm:pt-16">
 				<div className="pt-32 flex justify-around sm:flex-col-reverse sm:gap-10">
-					<motion.div
+					<div
 						ref={scope}
-						viewport={{ once: true }}
-						initial={{ x: "-100%", opacity: 0.4 }}
-						className="w-full h-fit max-w-lg py-8 px-5 rounded-xl bg-[black]/20 dark:bg-white/20 backdrop-blur-md transition-all duration-200"
+						className={`w-full h-fit max-w-lg py-8 px-5 rounded-xl bg-[black]/20 dark:bg-white/20 backdrop-blur-md opacity-0 transition-all duration-[2s] -translate-x-[100%]`}
 					>
 						<h1 className="text-[transparent] bg-gradient-to-br from-white to-secondary dark:to-primary bg-clip-text font-extrabold text-2xl xs:text-lg mb-4">
 							{init && (
@@ -73,25 +65,20 @@ function Header() {
 							)}
 						</h1>
 
-						{init && (
-							<motion.p
-								initial={{ opacity: 0 }}
-								animate={{ opacity: 1 }}
-								viewport={{ once: true }}
-								transition={{ duration: 2, delay: 4 }}
-								className="text-xs xs:text-[0.65rem] text-white"
-							>
-								At AMAKRE, we are dedicated to empowering our clients to achieve
-								their goals and thrive in the digital age. Contact us today to
-								learn more on how we can support your business growth and
-								success.
-							</motion.p>
-						)}
-					</motion.div>
+						<p
+							className={`text-xs xs:text-[0.65rem] text-white ${
+								init ? "opacity-100" : "opacity-0"
+							} delay-[3s] transition-all duration-1000`}
+						>
+							At AMAKRE, we are dedicated to empowering our clients to achieve
+							their goals and thrive in the digital age. Contact us today to
+							learn more on how we can support your business growth and success.
+						</p>
+					</div>
 
 					<motion.div
-						whileInView={{ opacity: 1 }}
 						initial={{ opacity: 0 }}
+						whileInView={{ opacity: 1 }}
 						transition={{ duration: 2 }}
 						viewport={{ once: true }}
 						className="relative max-w-xl"
@@ -111,11 +98,9 @@ function Header() {
 						<Image alt="investment image" src={header2} />
 					</motion.div>
 
-					<motion.div
+					<div
 						ref={scope1}
-						viewport={{ once: true }}
-						initial={{ x: "-100%", opacity: 0.4 }}
-						className="self-end w-full h-fit max-w-lg py-8 px-5 rounded-xl bg-primary/70 dark:bg-white/20 backdrop-blur-md transition-all duration-200"
+						className="self-end w-full h-fit max-w-lg py-8 px-5 rounded-xl bg-primary/70 dark:bg-white/20 backdrop-blur-md opacity-0 transition-all duration-[2s] -translate-x-[100%]"
 					>
 						<span className="uppercase text-xs xs:text-[0.65rem] text-white border-b border-white pb-1">
 							introduction
@@ -136,25 +121,20 @@ function Header() {
 
 						<hr className="border-[lightgray] dark:border-[gray] mb-4" />
 
-						{init1 && (
-							<motion.p
-								initial={{ opacity: 0 }}
-								animate={{ opacity: 1 }}
-								viewport={{ once: true }}
-								transition={{ duration: 2, delay: 4 }}
-								className="text-xs xs:text-[0.65rem] text-white"
-							>
-								AMAKRE is a dynamic blockchain, finance, and technology company
-								dedicated to pioneering innovation in the digital and
-								traditional finance sectors. As a prominent venture capitalist
-								firm, AMAKRE identifies and invests in cutting-edge projects
-								while also offering comprehensive education through its finance
-								academy. With a diverse portfolio of products and a vision for
-								growth, AMAKRE is poised to lead the way in shaping the future
-								of finance.
-							</motion.p>
-						)}
-					</motion.div>
+						<p
+							className={`text-xs xs:text-[0.65rem] text-white ${
+								init1 ? "opacity-100" : "opacity-0"
+							} delay-[3s] transition-all duration-1000`}
+						>
+							AMAKRE is a dynamic blockchain, finance, and technology company
+							dedicated to pioneering innovation in the digital and traditional
+							finance sectors. As a prominent venture capitalist firm, AMAKRE
+							identifies and invests in cutting-edge projects while also
+							offering comprehensive education through its finance academy. With
+							a diverse portfolio of products and a vision for growth, AMAKRE is
+							poised to lead the way in shaping the future of finance.
+						</p>
+					</div>
 				</div>
 			</div>
 		</div>
